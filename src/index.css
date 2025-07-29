@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Define font families */
+  :root {
+    --body-font: "poppins", sans-serif;
+    --heading-font: "poppins", sans-serif;
+  }
+
+  /* Set global styles */
+  html {
+    scroll-behavior: smooth;
+    @apply font-poppins;
+  }
+
+  body {
+    @apply text-foreground antialiased;
+    font-family: var(--body-font);
+    font-size: 20px; /* Matching original */
+    font-weight: 400;
+    color: var(--bs-body-color);
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins text-[var(--bs-heading-color)];
+  }
+
+  h1 {
+    @apply text-[84px] font-bold;
+  }
+
+  h2 {
+    @apply text-[64px] font-bold;
+  }
+
+  h3 {
+    @apply text-[38px] font-normal;
+  }
+
+  h4 {
+    @apply text-[28px] font-medium;
+  }
+
+  h5 {
+    @apply text-[28px] font-extralight;
+  }
+
+  /* Paragraphs */
+  p {
+    @apply font-poppins font-medium text-[var(--bs-btn-active-color)];
+  }
+
+  /* Responsive Typography */
+  @media (max-width: 1500px) {
+    h1 {
+      @apply text-[40px];
+    }
+  }
+  
+  @media (max-width: 600px) {
+    h2 {
+      @apply text-[39px];
+    }
+  }
+
+  /* Improved focus styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-krio-blue;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply text-white bg-[var(--bs-primary)] border-[var(--bs-primary)] 
+           hover:bg-[#34B1C3] hover:border-[#34B1C3] 
+           focus:outline-none focus:ring-2 focus:ring-[#34B1C3];
+  }
+
+  /* Sections Padding & Margin */
+  .section-padding {
+    @apply pt-[150px] pb-[150px];
+  }
+
+  .section-margin {
+    @apply mt-[150px] mb-[150px];
+  }
+
+  /* Forms */
+  .form-control {
+    @apply bg-transparent border border-[var(--bs-border-color)] p-[.9rem_.75rem] rounded-none 
+           focus:border-[var(--white-color)] focus:outline-none;
+  }
+
+  .form-control::placeholder {
+    @apply text-[var(--bs-body-color)];
+  }
+
+  /* Borders */
+  .border-light {
+    @apply border border-[#545555] !important;
+  }
+
+  /* Swiper Pagination */
+  .swiper-pagination-bullet {
+    @apply bg-[var(--bs-gray-200)] opacity-100 w-[17px] h-[17px];
+  }
+
+  .swiper-pagination-bullet-active {
+    @apply bg-[var(--swiper-pagination-color)];
+  }
+
+  /* Navbar */
+  .navbar-nav {
+    @apply text-[var(--white-color)] hover:text-[var(--white-color)];
+  }
+
+  .nav-item .nav-link.active {
+    @apply text-[var(--bs-primary)];
+  }
+
+  .tab-section .nav-link {
+    @apply font-poppins text-[28px] font-bold text-white;
+  }
+
+  /* Home */
+  #home {
+    @apply mt-[101px];
+  }
+
+  /* FAQs */
+  .accordion-item {
+    @apply border border-[var(--bs-body-bg)] bg-transparent rounded-none;
+  }
+
+  .accordion-button {
+    @apply font-poppins bg-transparent text-[1.75rem] leading-[127%] focus:outline-none;
+  }
+
+  /* Testimonials */
+  .testimonial-card {
+    @apply bg-transparent border border-[#545555] transition-all duration-300;
+  }
+
+  .testimonial-card:hover {
+    @apply bg-[#202121] border-[#545555];
+  }
+
+  /* Video Section */
+  .video-section {
+    @apply min-h-[707px];
+  }
+
+  /* Footer */
+  #footer .social-links ul li a {
+    @apply text-[var(--bs-body-bg)] transition-all duration-300;
+  }
+
+  #footer .social-links ul li a:hover {
+    @apply text-[var(--primary-color)];
+  }
+
+  /* Text shadow utility */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Text gradient utility */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-krio-purple via-krio-blue to-krio-green;
+  }
+
+  /* Improved focus styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-krio-blue;
+  }
+
+  /* Improved focus styles for buttons */
+  button:focus-visible, a:focus-visible {
+    @apply outline-none ring-2 ring-krio-blue ring-offset-2;
+  }
+
+  /* Better touch targets for mobile */
+  @media (max-width: 768px) {
+    button, a, input, select, textarea {
+      @apply min-h-10 min-w-10; 
+    }
+  }
+  
+  /* Hide scrollbar for testimonials section */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Improved form styles */
+  input, textarea, select {
+    @apply bg-white border border-gray-300 rounded-md py-3 px-4 w-full transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-krio-blue focus:border-transparent;
+  }
+  
+  label {
+    @apply block mb-2 font-medium;
+  }
+  
+  /* Improved card styles */
+  .card-hover {
+    @apply transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  /* Bubble animation */
+  
+}
